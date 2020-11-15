@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import moment from 'moment';
 
 import { trackerActions } from 'redux/actions';
@@ -37,7 +38,10 @@ const Tracker = ({ tracker }) => {
   const duration = calculateDurationTime(tracker);
 
   return (
-    <div className="Tracker">
+    <div className={classNames('Tracker', {
+        'Tracker--started': state === 'started',
+      })}
+    >
       <div className="Tracker__title">{tracker.name}</div>
       <div className="Tracker__description">
         <div className="Tracker__time">

@@ -9,6 +9,11 @@
   font-size: 12px;
   font-weight: bold;
 
+  &--started {
+    background-color: #fdfdf6;
+    color: #009700;
+  }
+
   &:first-child {
     border-top: 1px solid #d9d9d9;
   }

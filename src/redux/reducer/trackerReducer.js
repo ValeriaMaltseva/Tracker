@@ -1,4 +1,4 @@
-import { ADD_TRACKER, REMOVE_TRACKER, COMMAND_TRACKER } from '../constants';
+import { ADD_TRACKER, REMOVE_TRACKER, COMMAND_TRACKER } from 'redux/constants';
 
 const initialState = {
   trackerList: [],

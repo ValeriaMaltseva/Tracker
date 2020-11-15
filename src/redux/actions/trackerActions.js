@@ -1,3 +1,4 @@
+import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommand';
 import { ADD_TRACKER, REMOVE_TRACKER, COMMAND_TRACKER } from '../constants';
 
 const add = (payload) => ({
@@ -14,7 +15,7 @@ const start = (id) => ({
   type: COMMAND_TRACKER,
   payload: {
     id,
-    command: 'start',
+    command: COMMAND_START,
     time: Date.now(),
   },
 });
@@ -23,7 +24,7 @@ const pause = (id) => ({
   type: COMMAND_TRACKER,
   payload: {
     id,
-    command: 'pause',
+    command: COMMAND_PAUSE,
     time: Date.now(),
   },
 });

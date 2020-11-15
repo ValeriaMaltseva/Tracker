@@ -4,6 +4,7 @@ import moment from 'moment';
 import { v4 } from 'uuid';
 
 import { trackerActions } from 'redux/actions';
+import { COMMAND_START } from 'constants/trackerCommand';
 import { ReactComponent as MainPlayIcon } from './img/play_circle_filled.svg';
 import './TrackerForm.scss';
 
@@ -19,7 +20,7 @@ const TrackerForm = () => {
       id: v4(),
       name: `Tracker ${trackerName ? trackerName : moment().format()}`,
       history: [{
-        command: 'start',
+        command: COMMAND_START,
         time: Date.now(),
       }],
     };

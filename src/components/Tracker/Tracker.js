@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import { trackerActions } from 'redux/actions';
 import calculateDurationTime from 'utils/calculateDurationTime';
+import { COMMAND_START } from 'constants/trackerCommand';
 import { ReactComponent as PlayIcon } from './img/play_circle_outline.svg';
 import { ReactComponent as PauseIcon } from './img/pause_circle.svg';
 import { ReactComponent as RemoveIcon } from './img/remove_circle.svg';
@@ -17,7 +18,7 @@ const Tracker = ({ tracker }) => {
 
   //check state of tracker (start or pause)
   const lastState = tracker.history[tracker.history.length - 1];
-  const state = lastState && lastState.command === 'start' ? 'started' : 'stopped';
+  const state = lastState && lastState.command === COMMAND_START ? 'started' : 'stopped';
 
   const timerRef = useRef(null);
 

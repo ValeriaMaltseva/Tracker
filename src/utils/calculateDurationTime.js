@@ -1,3 +1,5 @@
+import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommand';
+
 /**
  * Calculate tracker duration time
  *
@@ -15,12 +17,12 @@ const calculateDurationTime = (tracker) => {
     const isLastState = history.length - 1 === index;
 
     // Calculate difference from "start" to "pause" command
-    if (nextState && nextState.command === 'pause') {
+    if (nextState && nextState.command === COMMAND_PAUSE) {
       acc = acc + (nextState.time - currentState.time);
     }
 
     // Calculate difference for last state if it's a "start" command
-    if (isLastState && currentState.command === 'start') {
+    if (isLastState && currentState.command === COMMAND_START) {
       acc = acc + (Date.now() - currentState.time);
     }
 

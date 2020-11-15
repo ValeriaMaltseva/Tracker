@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import { trackerActions } from 'redux/actions';
@@ -55,6 +56,10 @@ const Tracker = ({ tracker }) => {
       </div>
     </div>
   );
+};
+
+Tracker.propTypes = {
+  tracker: PropTypes.object.isRequired,
 };
 
 export default Tracker;

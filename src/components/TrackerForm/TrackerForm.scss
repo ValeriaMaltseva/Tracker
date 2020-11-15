@@ -1,0 +1,40 @@
+@import 'styles/mixins/media-mixin';
+
+$height: 48px;
+$color: #009700;
+
+.TrackerForm {
+  position: relative;
+  margin: 0 15px;
+
+  @include media(M) {
+    margin: 0;
+  }
+
+  &__input {
+    padding: 15px 40px 15px 20px;
+    width: 100%;
+    height: $height;
+    box-sizing: border-box;
+    border: 1px solid #acacac;
+    border-radius: 40px;
+    outline: none;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__play-icon {
+    width: 48px;
+    height: $height;
+  }
+}

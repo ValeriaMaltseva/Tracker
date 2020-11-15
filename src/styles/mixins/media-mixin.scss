@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+@function translate-media-condition($c) {
+  $condMap: (
+    "S": "(min-width: #{$S})",
+    "M": "(min-width: #{$M})",
+  );
+  $result: map-get( $condMap, $c );
+  @if ( $result == null ) {
+    $result: $c;
+  }
+  @return $result;
+}
+
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}

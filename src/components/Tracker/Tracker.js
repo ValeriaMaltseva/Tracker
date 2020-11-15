@@ -10,10 +10,11 @@ import { ReactComponent as RemoveIcon } from './img/remove_circle.svg';
 import './Tracker.scss';
 
 const Tracker = ({ tracker }) => {
+  const [tick, setTick] = useState(0);
+
   const dispatch = useDispatch();
 
-  const [, setTick] = useState(0);
-
+  //check state of tracker (start or pause)
   const lastState = tracker.history[tracker.history.length - 1];
   const state = lastState && lastState.command === 'start' ? 'started' : 'stopped';
 
@@ -22,14 +23,14 @@ const Tracker = ({ tracker }) => {
   useEffect(() => {
     if (state === 'started') {
       timerRef.current = setInterval(() => {
-        setTick(tick => tick + 1);
+        setTick(tick + 1);
       }, 1000);
     } else {
       clearInterval(timerRef.current);
     }
 
     return () => clearInterval(timerRef.current);
-  }, [state]);
+  }, [tick, state]);
 
   const duration = calculateDurationTime(tracker);
 

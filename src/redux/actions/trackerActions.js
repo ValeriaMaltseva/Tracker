@@ -1,4 +1,4 @@
-import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommand';
+import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommands';
 import { ADD_TRACKER, REMOVE_TRACKER, COMMAND_TRACKER } from '../constants';
 
 const add = (payload) => ({

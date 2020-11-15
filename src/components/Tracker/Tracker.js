@@ -5,7 +5,7 @@ import moment from 'moment';
 
 import { trackerActions } from 'redux/actions';
 import calculateDurationTime from 'utils/calculateDurationTime';
-import { COMMAND_START } from 'constants/trackerCommand';
+import { COMMAND_START } from 'constants/trackerCommands';
 import { ReactComponent as PlayIcon } from './img/play_circle_outline.svg';
 import { ReactComponent as PauseIcon } from './img/pause_circle.svg';
 import { ReactComponent as RemoveIcon } from './img/remove_circle.svg';

@@ -1,4 +1,4 @@
-import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommand';
+import { COMMAND_START, COMMAND_PAUSE } from 'constants/trackerCommands';
 
 /**
  * Calculate tracker duration time
